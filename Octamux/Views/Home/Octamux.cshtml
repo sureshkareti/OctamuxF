@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="~/Content/OM/owl.carousel.css">
     <link rel="stylesheet" href="~/Content/OM/main.css">
     <link href="~/Content/OM/loader.css" rel="stylesheet" />
+    <link href="~/Content/OM/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <header id="header">
@@ -84,6 +85,8 @@
             <div class="row d-flex justify-content-center">
                 <div class="menu-content  col-lg-7">
                     <div class="title text-center">
+                        <p class="input-success">Your message has sent. Thanks for contacting.</p>
+                        <p class="input-error">Sorry, something went wrong, please try again later</p>
                         <h1 class="mb-10" style="color:#031b4e;">Octamux Offered Services</h1>
                         <p>We helps to provide targeted information that enables our customer to solve specific business problems and achieve the desired outcome within a short span of time.</p>
                     </div>
@@ -347,6 +350,8 @@
     <!-- End home-about Area -->
     <!-- Start contact-page Area -->
     <!--<div id="contact" name="contact"></div>-->
+@using (Html.BeginForm("SendEmailContactForm", "Home", FormMethod.Post, new { data_toggle = "validator", id= "myForm" }))
+{
     <section id="contact" name="contact" class="contact-page-area section-gap">
         <div class="container">
             <div class="row d-flex justify-content-center">
@@ -398,16 +403,15 @@
 
                                 <input name="email" id="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
 
-                                <input name="phonenum" id="phoneNum" placeholder="Enter PhoneNumber" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" class="common-input mb-20 form-control" required="" type="text">
+                                <input name="phonenum" id="phoneNum"  placeholder="Enter PhoneNumber"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter PhoneNumber'" class="common-input mb-20 form-control" required="" type="text" >
                             </div>
                             <div class="col-lg-6 form-group">
                                 <textarea class="common-textarea form-control" name="message" id="message" placeholder="Enter Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'" required=""></textarea>
                             </div>
                             <div class="col-lg-12">
                                 <div class="alert-msg" style="text-align: left;"></div>
-                                <button class="genric-btn primary" id="btnSendMessage" style="float: right;">Send Message</button>
-                                <p class="input-success">Your message has sent. Thanks for contacting.</p>
-                                <p class="input-error">Sorry, something went wrong, please try again later</p>
+                                <button type="submit" class="genric-btn primary" id="btnSendMessage" style="float: right;">Send Message</button>
+                               
                             </div>
                         </div>
                     </div>
@@ -415,6 +419,7 @@
             </div>
         </div>
     </section>
+}
     <!-- End contact-page Area -->
     <!-- start footer Area -->
     <footer class="footer-area section-gap" style="background-color:#031b4e;padding:40px 0px 10px 0px;">
@@ -463,6 +468,8 @@
     <!-- End footer Area -->
     <script src="~/Scripts/OM/isotope.pkgd.min.js"></script>
     <script src="~/Scripts/OM/vendor/jquery-2.2.4.min.js"></script>
+    @*<script src="~/Scripts/OM/vendor/bootstrap.min.js"></script>
+    <script src="~/Scripts/OM/bootstrapvalidator.min.js"></script>*@
     <script src="~/Scripts/OM/jquery-ui-1.12.1.min.js"></script>
     <script src="~/Scripts/OM/jquery.magnific-popup.min.js"></script>
     <script src="~/Scripts/OM/simple-skillbar.js"></script>
@@ -474,40 +481,53 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            $("#btnSendMessage").click(function () {
-                $(".loader-wrap").show();
-                var name = $("#name").val();
-                var email = $("#email").val();
-                var phonenum = $("#phoneNum").val();
-                var message = $("#message").val();
-                $.ajax({
-                    url: '/Home/SendEmailContactForm/',
-                   data: { "FullName": name, "email": email, "phoneNum": phonenum, "message": message },
-                    type: 'POST',
-                 //   contentType: 'application/json; charset=utf-8',
-                    success: function (data) {
-                        $(".loader-wrap").hide();
-                        if(data=='True')
-                        {
-                            $(".input-success").css("display", "block");
-                            $(window).scrollTop($('#contactUs').offset().top);
-                        }
-                        else {
-                            $(".input-error").css("display", "block");
-                            $(window).scrollTop($('#contactUs').offset().top);
-                        }
-                    },
-                    failure: function (response) {
-                        $(".loader-wrap").hide();
-                        console.log(response.responseText);
-                    },
-                    error: function (response) {
-                        $(".loader-wrap").hide();
-                        console.log(response.responseText);
-                    }
-                });
-            });
+            if ("@ViewBag.send" !== "") {
 
+                if ("@ViewBag.send" == "True") {
+                    $(".input-success").css("display", "block");
+                   // $(window).scrollTop($('#servicess').offset().top);
+                }
+                else {
+                    $(".input-error").css("display", "block");
+                    //$(window).scrollTop($('#servicess').offset().top);
+                }
+
+            }
+
+            //if ($('#myForm').validator('validate').has('.has-error').length === 0) {
+            //    $("#btnSendMessage").click(function () {
+            //        $(".loader-wrap").show();
+            //        var name = $("#name").val();
+            //        var email = $("#email").val();
+            //        var phonenum = $("#phoneNum").val();
+            //        var message = $("#message").val();
+            //        $.ajax({
+            //            url: '/Home/SendEmailContactForm/',
+            //            data: { "FullName": name, "email": email, "phoneNum": phonenum, "message": message },
+            //            type: 'POST',
+            //            //   contentType: 'application/json; charset=utf-8',
+            //            success: function (data) {
+            //                $(".loader-wrap").hide();
+            //                if (data == 'True') {
+            //                    $(".input-success").css("display", "block");
+            //                    $(window).scrollTop($('#contactUs').offset().top);
+            //                }
+            //                else {
+            //                    $(".input-error").css("display", "block");
+            //                    $(window).scrollTop($('#contactUs').offset().top);
+            //                }
+            //            },
+            //            failure: function (response) {
+            //                $(".loader-wrap").hide();
+            //                console.log(response.responseText);
+            //            },
+            //            error: function (response) {
+            //                $(".loader-wrap").hide();
+            //                console.log(response.responseText);
+            //            }
+            //        });
+            //    });
+            //}
         });
 
 

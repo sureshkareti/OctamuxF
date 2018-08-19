@@ -96,6 +96,7 @@
     <Content Include="Content\fonts\Linearicons-Free.svg" />
     <Content Include="Content\OM\animate.min.css" />
     <Content Include="Content\OM\bootstrap.css" />
+    <Content Include="Content\OM\bootstrap.min.css" />
     <Content Include="Content\OM\font-awesome.min.css" />
     <Content Include="Content\OM\linearicons.css" />
     <Content Include="Content\OM\loader.css" />
@@ -122,6 +123,7 @@
     <Content Include="img\servicess\iconweb.png" />
     <Content Include="img\servicess\iconwebdev.png" />
     <Content Include="img\servicess\iconzoho.png" />
+    <Content Include="Scripts\OM\bootstrapvalidator.min.js" />
     <Content Include="Scripts\OM\isotope.pkgd.min.js" />
     <Content Include="Scripts\OM\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\OM\jquery.magnific-popup.min.js" />

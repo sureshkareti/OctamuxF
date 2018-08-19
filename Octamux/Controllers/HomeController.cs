@@ -16,7 +16,7 @@ namespace Octamux.Controllers
             return View();
         }
         [HttpPost]
-        public  bool SendEmailContactForm(string FullName, string email, string phoneNum, string message)
+        public  ActionResult SendEmailContactForm(string name, string email, string phoneNum, string message)
         {
             bool isSuccess = true;
             try
@@ -25,7 +25,7 @@ namespace Octamux.Controllers
                 msgs.To.Add(new MailAddress("octamux.info@gmail.com"));
                 MailAddress address = new MailAddress("abc@domain.com");
                 msgs.From = new MailAddress("octamux.info@gmail.com");
-                msgs.Subject = "Hello!!! "+FullName+" Contacted you.";
+                msgs.Subject = "Hello!!! "+ name + " Contacted you.";
                 msgs.Sender = new MailAddress("octamux.info@gmail.com");
 
                 var body = new StringBuilder();
@@ -34,7 +34,7 @@ namespace Octamux.Controllers
                 body.AppendLine("the user has contacted you and details are below.");
                 body.AppendLine();
                 body.AppendLine();
-                body.AppendLine("Name : " + FullName + "");
+                body.AppendLine("Name : " + name + "");
                 body.AppendLine();
                 body.AppendLine("Email : " + email + "");
                 body.AppendLine();
@@ -44,7 +44,7 @@ namespace Octamux.Controllers
                 body.AppendLine();
                 body.AppendLine();
                 body.AppendLine("Thanks,");
-                body.AppendLine(FullName);
+                body.AppendLine(name);
 
                 msgs.Body = body.ToString();
                 msgs.IsBodyHtml = true;
@@ -63,8 +63,9 @@ namespace Octamux.Controllers
               
                // Models.Library.WriteLog("Error occured while sending an email from contact form ", ex);
             }
-
-            return isSuccess;
+            ViewBag.send = isSuccess;
+            //return isSuccess;
+            return View("Octamux");
         }
     }
 }
