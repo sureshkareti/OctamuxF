@@ -98,6 +98,7 @@
     <Content Include="Content\OM\bootstrap.css" />
     <Content Include="Content\OM\font-awesome.min.css" />
     <Content Include="Content\OM\linearicons.css" />
+    <Content Include="Content\OM\loader.css" />
     <Content Include="Content\OM\magnific-popup.css" />
     <Content Include="Content\OM\main.css" />
     <Content Include="Content\OM\nice-select.css" />

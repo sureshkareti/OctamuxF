@@ -25,7 +25,24 @@
     <!--
     CSS
     ============================================= -->
+    <style>
+        .input-success {
+    margin-top: 10px;
+    background-color: #16a085;
+    color: #fff;
+    padding: 3px 15px;
+    display: none;
+}
 
+.input-error {
+    margin-top: 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 3px 15px;
+    display: none;
+}
+
+    </style>
     <link rel="stylesheet" href="~/Content/OM/linearicons.css">
     <link rel="stylesheet" href="~/Content/OM/font-awesome.min.css">
     <link rel="stylesheet" href="~/Content/OM/bootstrap.css">
@@ -35,6 +52,7 @@
     <link rel="stylesheet" href="~/Content/OM/animate.min.css">
     <link rel="stylesheet" href="~/Content/OM/owl.carousel.css">
     <link rel="stylesheet" href="~/Content/OM/main.css">
+    <link href="~/Content/OM/loader.css" rel="stylesheet" />
 </head>
 <body>
     <header id="header">
@@ -340,7 +358,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="contactUs">
                 <div class="col-lg-4 d-flex flex-column address-wrap">
                     <div class="single-contact-address d-flex flex-row">
                         <div class="icon">
@@ -388,6 +406,8 @@
                             <div class="col-lg-12">
                                 <div class="alert-msg" style="text-align: left;"></div>
                                 <button class="genric-btn primary" id="btnSendMessage" style="float: right;">Send Message</button>
+                                <p class="input-success">Your message has sent. Thanks for contacting.</p>
+                                <p class="input-error">Sorry, something went wrong, please try again later</p>
                             </div>
                         </div>
                     </div>
@@ -433,6 +453,12 @@
                 </div>
             </div>
         </div>
+        <div class="loader-wrap" style="display:none">
+            <div class="loader">
+                <span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span>
+                <span class="loader-item"></span><span class="loader-item"></span>
+            </div>
+        </div>
     </footer>
     <!-- End footer Area -->
     <script src="~/Scripts/OM/isotope.pkgd.min.js"></script>
@@ -449,6 +475,7 @@
 
         $(document).ready(function () {
             $("#btnSendMessage").click(function () {
+                $(".loader-wrap").show();
                 var name = $("#name").val();
                 var email = $("#email").val();
                 var phonenum = $("#phoneNum").val();
@@ -459,12 +486,23 @@
                     type: 'POST',
                  //   contentType: 'application/json; charset=utf-8',
                     success: function (data) {
-                       
+                        $(".loader-wrap").hide();
+                        if(data=='True')
+                        {
+                            $(".input-success").css("display", "block");
+                            $(window).scrollTop($('#contactUs').offset().top);
+                        }
+                        else {
+                            $(".input-error").css("display", "block");
+                            $(window).scrollTop($('#contactUs').offset().top);
+                        }
                     },
                     failure: function (response) {
+                        $(".loader-wrap").hide();
                         console.log(response.responseText);
                     },
                     error: function (response) {
+                        $(".loader-wrap").hide();
                         console.log(response.responseText);
                     }
                 });
