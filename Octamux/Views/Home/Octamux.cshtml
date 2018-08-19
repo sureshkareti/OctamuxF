@@ -19,7 +19,7 @@
     <meta charset="UTF-8">
     <!-- Site Title -->
     <title>Octamux</title>
-    <link rel="icon" type="image/png" href="img/logo/OM_icon.png">
+    <link rel="icon" type="image/png" href="~/img/logo/OM_icon.png">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
@@ -380,7 +380,7 @@
 
                                 <input name="email" id="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
 
-                                <input name="subject" id="subject" placeholder="Enter subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" class="common-input mb-20 form-control" required="" type="text">
+                                <input name="phonenum" id="phoneNum" placeholder="Enter PhoneNumber" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" class="common-input mb-20 form-control" required="" type="text">
                             </div>
                             <div class="col-lg-6 form-group">
                                 <textarea class="common-textarea form-control" name="message" id="message" placeholder="Enter Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'" required=""></textarea>
@@ -451,14 +451,25 @@
             $("#btnSendMessage").click(function () {
                 var name = $("#name").val();
                 var email = $("#email").val();
-                var subject = $("#subject").val();
+                var phonenum = $("#phoneNum").val();
                 var message = $("#message").val();
+                $.ajax({
+                    url: '/Home/SendEmailContactForm/',
+                   data: { "FullName": name, "email": email, "phoneNum": phonenum, "message": message },
+                    type: 'POST',
+                 //   contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                       
+                    },
+                    failure: function (response) {
+                        console.log(response.responseText);
+                    },
+                    error: function (response) {
+                        console.log(response.responseText);
+                    }
+                });
             });
 
-            $("#id1").click(function () {
-
-                alert($(this).attr("href"));
-            });
         });
 
 
