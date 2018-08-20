@@ -27,21 +27,20 @@
     ============================================= -->
     <style>
         .input-success {
-    margin-top: 10px;
-    background-color: #16a085;
-    color: #fff;
-    padding: 3px 15px;
-    display: none;
-}
+            margin-top: 10px;
+            background-color: #16a085;
+            color: #fff;
+            padding: 3px 15px;
+            display: none;
+        }
 
-.input-error {
-    margin-top: 10px;
-    background-color: #e74c3c;
-    color: #fff;
-    padding: 3px 15px;
-    display: none;
-}
-
+        .input-error {
+            margin-top: 10px;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 3px 15px;
+            display: none;
+        }
     </style>
     <link rel="stylesheet" href="~/Content/OM/linearicons.css">
     <link rel="stylesheet" href="~/Content/OM/font-awesome.min.css">
@@ -53,7 +52,7 @@
     <link rel="stylesheet" href="~/Content/OM/owl.carousel.css">
     <link rel="stylesheet" href="~/Content/OM/main.css">
     <link href="~/Content/OM/loader.css" rel="stylesheet" />
-    <link href="~/Content/OM/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/Content/OM/bootstrap.min.css" rel="stylesheet" />*@
 </head>
 <body>
     <header id="header">
@@ -350,9 +349,9 @@
     <!-- End home-about Area -->
     <!-- Start contact-page Area -->
     <!--<div id="contact" name="contact"></div>-->
-@using (Html.BeginForm("SendEmailContactForm", "Home", FormMethod.Post, new { data_toggle = "validator", id= "myForm" }))
-{
-    <section id="contact" name="contact" class="contact-page-area section-gap">
+    @*@using (Html.BeginForm("SendEmailContactForm", "Home", FormMethod.Post, new { data_toggle = "validator", id= "myForm" }))
+        {*@
+    <section id="contact" name="contact" class="contact-page-area section-gap" style="padding:90px 0">
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="menu-content pb-70 col-lg-8">
@@ -362,8 +361,24 @@
                     </div>
                 </div>
             </div>
+            <div style="max-width:600px;margin:0 auto">
+                <div class="alert alert-success" id="success-alert" style="display:none">
+                    @*<button type="button" class="close" data-dismiss="alert">x</button>*@
+                    <strong>Success! </strong>
+                    Your message has sent. Thanks for contacting.
+                </div>
+                <div class="alert alert-danger" id="failure-alert" style="display:none">
+                    @*<button type="button" class="close" data-dismiss="alert">x</button>*@
+                    <strong>Sorry! </strong>
+                    something went wrong, please try again
+                </div>
 
+
+               
+
+            </div>
             <div class="row" id="contactUs">
+
                 <div class="col-lg-4 d-flex flex-column address-wrap">
                     <div class="single-contact-address d-flex flex-row">
                         <div class="icon">
@@ -396,14 +411,14 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <div class="form-area contact-form text-right">
+                    <form id="contactForm" class="form-area contact-form text-right" onsubmit="return SendEmail()">
                         <div class="row">
                             <div class="col-lg-6 form-group">
                                 <input name="name" id="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
 
                                 <input name="email" id="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
 
-                                <input name="phonenum" id="phoneNum"  placeholder="Enter PhoneNumber"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter PhoneNumber'" class="common-input mb-20 form-control" required="" type="text" >
+                                <input name="phonenum" id="phoneNum" placeholder="Enter PhoneNumber" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter PhoneNumber'" class="common-input mb-20 form-control" required="" type="text">
                             </div>
                             <div class="col-lg-6 form-group">
                                 <textarea class="common-textarea form-control" name="message" id="message" placeholder="Enter Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'" required=""></textarea>
@@ -411,15 +426,15 @@
                             <div class="col-lg-12">
                                 <div class="alert-msg" style="text-align: left;"></div>
                                 <button type="submit" class="genric-btn primary" id="btnSendMessage" style="float: right;">Send Message</button>
-                               
+
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-}
+    @*}*@
     <!-- End contact-page Area -->
     <!-- start footer Area -->
     <footer class="footer-area section-gap" style="background-color:#031b4e;padding:40px 0px 10px 0px;">
@@ -459,17 +474,38 @@
             </div>
         </div>
         <div class="loader-wrap" style="display:none">
-            <div class="loader">
-                <span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span><span class="loader-item"></span>
-                <span class="loader-item"></span><span class="loader-item"></span>
+            <div class="sk-fading-circle">
+
+                <div class="sk-circle1 sk-circle"></div>
+                <div class="sk-circle2 sk-circle"></div>
+                <div class="sk-circle3 sk-circle"></div>
+                <div class="sk-circle4 sk-circle"></div>
+                <div class="sk-circle5 sk-circle"></div>
+                <div class="sk-circle6 sk-circle"></div>
+                <div class="sk-circle7 sk-circle"></div>
+                <div class="sk-circle8 sk-circle"></div>
+                <div class="sk-circle9 sk-circle"></div>
+                <div class="sk-circle10 sk-circle"></div>
+                <div class="sk-circle11 sk-circle"></div>
+                <div class="sk-circle12 sk-circle"></div>
             </div>
+
+            @*<div class="loader" style="border:5px solid gray">
+
+
+
+
+
+                </div>*@
         </div>
+
+
     </footer>
     <!-- End footer Area -->
     <script src="~/Scripts/OM/isotope.pkgd.min.js"></script>
     <script src="~/Scripts/OM/vendor/jquery-2.2.4.min.js"></script>
     @*<script src="~/Scripts/OM/vendor/bootstrap.min.js"></script>
-    <script src="~/Scripts/OM/bootstrapvalidator.min.js"></script>*@
+        <script src="~/Scripts/OM/bootstrapvalidator.min.js"></script>*@
     <script src="~/Scripts/OM/jquery-ui-1.12.1.min.js"></script>
     <script src="~/Scripts/OM/jquery.magnific-popup.min.js"></script>
     <script src="~/Scripts/OM/simple-skillbar.js"></script>
@@ -480,19 +516,88 @@
 
     <script type="text/javascript">
 
+        function SendEmail() {
+            
+            $(".loader-wrap").show();
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var phonenum = $("#phoneNum").val();
+            var message = $("#message").val();
+            $.ajax({
+                url: '/Home/SendEmailContactForm/',
+                data: { "name": name, "email": email, "phoneNum": phonenum, "message": message },
+                type: 'POST',
+                //   contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+
+                    console.log(data);
+
+                    $(".loader-wrap").hide();
+                    if (data == 'True') {
+                       
+                        $("#success-alert").css("display", "block");
+                        $("#success-alert").css("opacity", "1");
+
+                        $("#success-alert").fadeTo(4000, 0).slideUp(1500, function () {
+                            $(this).css("display", "none");
+                        });
+
+                        $("#name").val('');
+                        $("#email").val('');
+                        $("#phoneNum").val('');
+                        $("#message").val('');
+                    }
+                    else {
+
+                        $("#failure-alert").css("display", "block");
+                        $("#failure-alert").css("opacity", "1");
+
+                        $("#failure-alert").fadeTo(4000, 0).slideUp(1500, function () {
+                            $(this).css("display", "none");
+                        });
+
+                        //$("#name").val('');
+                        //$("#email").val('');
+                        //$("#phoneNum").val('');
+                        //$("#message").val('');
+                    }
+                },
+                failure: function (response) {
+                    $(".loader-wrap").hide();
+                    console.log(response.responseText);
+                },
+                error: function (response) {
+                    $(".loader-wrap").hide();
+                    console.log(response.responseText);
+                }
+            });
+
+            return false;
+        }
+
+
         $(document).ready(function () {
-            if ("@ViewBag.send" !== "") {
+            @*if ("@ViewBag.send" !== "") {
 
                 if ("@ViewBag.send" == "True") {
                     $(".input-success").css("display", "block");
-                   // $(window).scrollTop($('#servicess').offset().top);
+                  
                 }
                 else {
                     $(".input-error").css("display", "block");
-                    //$(window).scrollTop($('#servicess').offset().top);
+                  
                 }
 
             }
+
+            if ($('#contactForm').validator('validate').has('.has-error').length === 0) {
+
+                $("#btnSendMessage").click(function () {
+                    alert("helo");
+                });
+            };*@
+
+
 
             //if ($('#myForm').validator('validate').has('.has-error').length === 0) {
             //    $("#btnSendMessage").click(function () {

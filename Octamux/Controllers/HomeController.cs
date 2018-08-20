@@ -16,7 +16,7 @@ namespace Octamux.Controllers
             return View();
         }
         [HttpPost]
-        public  ActionResult SendEmailContactForm(string name, string email, string phoneNum, string message)
+        public  bool SendEmailContactForm(string name, string email, string phoneNum, string message)
         {
             bool isSuccess = true;
             try
@@ -29,31 +29,29 @@ namespace Octamux.Controllers
                 msgs.Sender = new MailAddress("octamux.info@gmail.com");
 
                 var body = new StringBuilder();
-                body.AppendLine("Dear Octamux,");
-                body.AppendLine();
-                body.AppendLine("the user has contacted you and details are below.");
-                body.AppendLine();
-                body.AppendLine();
-                body.AppendLine("Name : " + name + "");
-                body.AppendLine();
-                body.AppendLine("Email : " + email + "");
-                body.AppendLine();
-                body.AppendLine("Phone Number : " + phoneNum + "");
-                body.AppendLine();
-                body.AppendLine("Message : " + message + "");
-                body.AppendLine();
-                body.AppendLine();
-                body.AppendLine("Thanks,");
-                body.AppendLine(name);
-
+                body.AppendLine("<H3>Dear Octamux,</H3>");
+                body.AppendLine("<p>the user has contacted you and details are below.</p>");
+                body.AppendLine("<p>Name : " + name + "</p>");
+                body.AppendLine("<p>Phone Number : " + phoneNum + "</p>");
+                body.AppendLine("<p>Email : " + email + "</p>");
+                body.AppendLine("<p>Message : " + message + "</p>");
+                body.AppendLine("<br>");
+                body.AppendLine("<p>Thanks,<br>"+ name + "</p>");
+               
                 msgs.Body = body.ToString();
                 msgs.IsBodyHtml = true;
                 SmtpClient client = new SmtpClient();
-                client.Host = "relay-hosting.secureserver.net";
-                //client.Host = "smtp.gmail.com";
+
+                client.Host = "relay-hosting.secureserver.net";                
                 client.Port = 25;
+
+                //client.Host = "smtp.gmail.com";
+                //client.Port = 587;
+
                 client.UseDefaultCredentials = false;
                 client.Credentials = new System.Net.NetworkCredential("octamux.info@gmail.com", "octamux2018");
+                //client.EnableSsl = true;
+
                 //Send the msgs  
                 client.Send(msgs);
             }
@@ -64,8 +62,9 @@ namespace Octamux.Controllers
                // Models.Library.WriteLog("Error occured while sending an email from contact form ", ex);
             }
             ViewBag.send = isSuccess;
-            //return isSuccess;
-            return View("Octamux");
+
+            return  isSuccess;
+            //return View("Octamux");
         }
     }
 }
