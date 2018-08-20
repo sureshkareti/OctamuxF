@@ -13,6 +13,10 @@ namespace Octamux.Controllers
         // GET: Home
         public ActionResult Octamux()
         {
+            return Redirect("~/Home.html");
+        }
+        public ActionResult Contact()
+        {
             return View();
         }
         [HttpPost]

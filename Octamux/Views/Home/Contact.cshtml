@@ -1,0 +1,269 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/Content/OM/linearicons.css">
+    <link rel="stylesheet" href="/Content/OM/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content/OM/bootstrap.css">
+    <link rel="stylesheet" href="/Content/OM/magnific-popup.css">
+    @*<link rel="stylesheet" href="/Content/OM/jquery-ui.css">*@
+    <link rel="stylesheet" href="/Content/OM/nice-select.css">
+    <link rel="stylesheet" href="/Content/OM/animate.min.css">
+    <link rel="stylesheet" href="/Content/OM/owl.carousel.css">
+    <link rel="stylesheet" href="/Content/OM/main.css">
+    <link href="~/Content/OM/loader.css" rel="stylesheet" />
+    @*<link href="~/Content/OM/loader.css" rel="stylesheet" />*@
+</head>
+<body>
+    <!-- #header -->
+    <header id="header">
+        <div class="container main-menu" style="padding:10px 0px 10px 0px">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a href="/Home.html" style="outline:none;"><img src="/img/logo/OM_logo.png" alt="Octamux" title="Octamux" /></a>
+                    <!--<a href="index.html"><img src="img/logo.png" alt="" title="" /></a>-->
+                    <!--<img src="img/logo.png" />-->
+                </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li><a href="/Home.html">Home</a></li>
+                        <li><a href="/Services.html" target="_self">Services</a></li>
+                        <li><a href="/Portfolio.html" target="_self">Portfolio</a></li>
+                        <li><a href="/about.html" target="_self">About</a></li>
+                        <li><a href="#" target="_self">Contact</a></li>
+                    </ul>
+                </nav><!-- #nav-menu-container -->
+            </div>
+        </div>
+    </header>
+    <!-- #header -->
+    <!--<div id="contact" name="contact"></div>-->
+
+    <section id="contact" name="contact" class="contact-page-area section-gap" style="padding:90px 0">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-8">
+                    <div class="title text-center">
+                        <h1 class="mb-10" style="color:#031b4e;">Contact Us</h1>
+                        <!--<p>It is very easy to start smoking but it is an uphill task to quit it. Ask any chain smoker or even a person.</p>-->
+                    </div>
+                </div>
+            </div>
+            <div style="max-width:600px;margin:0 auto">
+                <div class="alert alert-success" id="success-alert" style="display:none">
+                    @*<button type="button" class="close" data-dismiss="alert">x</button>*@
+                    <strong>Success! </strong>
+                    Your message has sent. Thanks for contacting.
+                </div>
+                <div class="alert alert-danger" id="failure-alert" style="display:none">
+                    @*<button type="button" class="close" data-dismiss="alert">x</button>*@
+                    <strong>Sorry! </strong>
+                    something went wrong, please try again
+                </div>
+
+
+
+
+            </div>
+            <div class="row" id="contactUs">
+
+                <div class="col-lg-4 d-flex flex-column address-wrap">
+                    <div class="single-contact-address d-flex flex-row">
+                        <div class="icon">
+                            <span class="lnr lnr-home"></span>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Hyderabad, India</h5>
+                            <p>
+                                11-24, Panjagutta, Hyderabad
+                            </p>
+                        </div>
+                    </div>
+                    <div class="single-contact-address d-flex flex-row">
+                        <div class="icon">
+                            <span class="lnr lnr-phone-handset"></span>
+                        </div>
+                        <div class="contact-details">
+                            <h5>(901) 4454 730 ,(917) 7098 010</h5>
+                            <p>Mon to Fri 9am to 6 pm</p>
+                        </div>
+                    </div>
+                    <div class="single-contact-address d-flex flex-row">
+                        <div class="icon">
+                            <span class="lnr lnr-envelope"></span>
+                        </div>
+                        <div class="contact-details">
+                            <h5>octamux.info@gmail.com</h5>
+                            <p>Send us your query anytime!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <form id="contactForm" class="form-area contact-form text-right" onsubmit="return SendEmail()">
+                        <div class="row">
+                            <div class="col-lg-6 form-group">
+                                <input name="name" id="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
+
+                                <input name="email" id="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
+
+                                <input name="phonenum" id="phoneNum" placeholder="Enter PhoneNumber" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter PhoneNumber'" class="common-input mb-20 form-control" required="" type="text">
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <textarea class="common-textarea form-control" name="message" id="message" placeholder="Enter Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'" required=""></textarea>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="alert-msg" style="text-align: left;"></div>
+                                <button type="submit" class="genric-btn primary" id="btnSendMessage" style="float: right;">Send Message</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End contact-page Area -->
+
+    <!-- #footer -->
+    <footer class="footer-area section-gap" style="background-color:#031b4e;padding:40px 0px 10px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h4>About Us</h4>
+                        <p>
+                        <p style="text-align:justify">We are the creative commercial and technical expertise to understand quickly your vision and interpret it into a technology framework that breaks free from existing system constraints, providing a long-term solution that enables business growth.</p>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-6">
+
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+                    <div class="single-footer-widget">
+                        <h4>Follow Us</h4>
+                        <p>Let us be social</p>
+                        <div class="footer-social d-flex align-items-center">
+                            <a href="javascript:void()"><i class="fa fa-facebook"></i></a>
+                            <a href="javascript:void()"><i class="fa fa-twitter"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr style="background-color:#777777;" />
+
+                    <p style="text-align:center">
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="loader-wrap" style="display:none">
+            <div class="sk-fading-circle">
+
+                <div class="sk-circle1 sk-circle"></div>
+                <div class="sk-circle2 sk-circle"></div>
+                <div class="sk-circle3 sk-circle"></div>
+                <div class="sk-circle4 sk-circle"></div>
+                <div class="sk-circle5 sk-circle"></div>
+                <div class="sk-circle6 sk-circle"></div>
+                <div class="sk-circle7 sk-circle"></div>
+                <div class="sk-circle8 sk-circle"></div>
+                <div class="sk-circle9 sk-circle"></div>
+                <div class="sk-circle10 sk-circle"></div>
+                <div class="sk-circle11 sk-circle"></div>
+                <div class="sk-circle12 sk-circle"></div>
+            </div>
+        </div>
+    </footer>
+    <!-- #footer -->
+    <script src="~/Scripts/OM/isotope.pkgd.min.js"></script>
+    <script src="~/Scripts/OM/vendor/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/OM/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/OM/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/OM/simple-skillbar.js"></script>
+    <script src="~/Scripts/OM/isotope.pkgd.min.js"></script>
+    <script src="~/Scripts/OM/superfish.min.js"></script>
+    <script src="~/Scripts/OM/owl.carousel.min.js"></script>
+    <script src="~/Scripts/OM/main.js"></script>
+
+    <script type="text/javascript">
+
+        function SendEmail() {
+
+            $(".loader-wrap").show();
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var phonenum = $("#phoneNum").val();
+            var message = $("#message").val();
+            $.ajax({
+                url: '/Home/SendEmailContactForm/',
+                data: { "name": name, "email": email, "phoneNum": phonenum, "message": message },
+                type: 'POST',
+                //   contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+
+                    console.log(data);
+
+                    $(".loader-wrap").hide();
+                    if (data == 'True') {
+
+                        $("#success-alert").css("display", "block");
+                        $("#success-alert").css("opacity", "1");
+
+                        $("#success-alert").fadeTo(4000, 0).slideUp(1500, function () {
+                            $(this).css("display", "none");
+                        });
+
+                        $("#name").val('');
+                        $("#email").val('');
+                        $("#phoneNum").val('');
+                        $("#message").val('');
+                    }
+                    else {
+
+                        $("#failure-alert").css("display", "block");
+                        $("#failure-alert").css("opacity", "1");
+
+                        $("#failure-alert").fadeTo(4000, 0).slideUp(1500, function () {
+                            $(this).css("display", "none");
+                        });
+
+                        //$("#name").val('');
+                        //$("#email").val('');
+                        //$("#phoneNum").val('');
+                        //$("#message").val('');
+                    }
+                },
+                failure: function (response) {
+                    $(".loader-wrap").hide();
+                    console.log(response.responseText);
+                },
+                error: function (response) {
+                    $(".loader-wrap").hide();
+                    console.log(response.responseText);
+                }
+            });
+
+            return false;
+        }
+
+
+        $(document).ready(function () {
+            
+        });
+
+
+    </script>
+</body>
+</html>

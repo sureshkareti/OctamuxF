@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
@@ -106,6 +107,7 @@
     <Content Include="Content\OM\owl.carousel.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Home.html" />
     <Content Include="img\about\aboutus.jpg" />
     <Content Include="img\about\c-logo.png" />
     <Content Include="img\ClientLogos\All8bitMcu.PNG" />
@@ -123,6 +125,7 @@
     <Content Include="img\servicess\iconweb.png" />
     <Content Include="img\servicess\iconwebdev.png" />
     <Content Include="img\servicess\iconzoho.png" />
+    <Content Include="Portfolio.html" />
     <Content Include="Scripts\OM\bootstrapvalidator.min.js" />
     <Content Include="Scripts\OM\isotope.pkgd.min.js" />
     <Content Include="Scripts\OM\jquery-ui-1.12.1.min.js" />
@@ -133,6 +136,7 @@
     <Content Include="Scripts\OM\superfish.min.js" />
     <Content Include="Scripts\OM\vendor\bootstrap.min.js" />
     <Content Include="Scripts\OM\vendor\jquery-2.2.4.min.js" />
+    <Content Include="Services.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -146,7 +150,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\Home\Octamux.cshtml" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
@@ -161,6 +164,7 @@
     <Content Include="Content\fonts\Linearicons-Free.woff2" />
     <Content Include="Content\OM\bootstrap.map" />
     <None Include="Properties\PublishProfiles\OMFTP.pubxml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
