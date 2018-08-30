@@ -125,6 +125,8 @@
     <Content Include="img\servicess\iconweb.png" />
     <Content Include="img\servicess\iconwebdev.png" />
     <Content Include="img\servicess\iconzoho.png" />
+    <Content Include="MobileApp.html" />
+    <Content Include="Office365.html" />
     <Content Include="Portfolio.html" />
     <Content Include="Scripts\OM\bootstrapvalidator.min.js" />
     <Content Include="Scripts\OM\isotope.pkgd.min.js" />
@@ -137,7 +139,11 @@
     <Content Include="Scripts\OM\vendor\bootstrap.min.js" />
     <Content Include="Scripts\OM\vendor\jquery-2.2.4.min.js" />
     <Content Include="Services.html" />
+    <Content Include="SharePoint.html" />
+    <Content Include="WebDesign.html" />
+    <Content Include="WebDevelopment.html" />
     <Content Include="Web.config" />
+    <Content Include="ZOHO.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
