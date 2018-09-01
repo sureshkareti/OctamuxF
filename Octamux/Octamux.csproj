@@ -125,6 +125,12 @@
     <Content Include="img\servicess\iconweb.png" />
     <Content Include="img\servicess\iconwebdev.png" />
     <Content Include="img\servicess\iconzoho.png" />
+    <Content Include="img\servicess\MobileApp.png" />
+    <Content Include="img\servicess\Office365.png" />
+    <Content Include="img\servicess\sharepoint-services.jpg" />
+    <Content Include="img\servicess\web-design.jpg" />
+    <Content Include="img\servicess\web-development.jpg" />
+    <Content Include="img\servicess\ZOHO.png" />
     <Content Include="MobileApp.html" />
     <Content Include="Office365.html" />
     <Content Include="Portfolio.html" />
