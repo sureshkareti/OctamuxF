@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="/Content/OM/owl.carousel.css">
     <link rel="stylesheet" href="/Content/OM/main.css">
     <link href="/Content/OM/loader.css" rel="stylesheet" />
+    <link href="Content/slider/full-slider.css" rel="stylesheet" />
+    <link href="Content/slider/animate.css" rel="stylesheet" />
+  
 </head>
 <body>
     <header id="header">
@@ -45,10 +48,10 @@
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li><a href="/Home.html">Home</a></li>
-                        <li><a href="/Services.html" target="_self">Services</a></li>
-                        <li><a href="/Portfolio.html" target="_self">Portfolio</a></li>
-                        <li><a href="/about.html" target="_self">About</a></li>
-                        <li><a href="Home/Contact" target="_self">Contact</a></li>
+                        <li><a href="/Services.html">Services</a></li>
+                        <li><a href="/Portfolio.html">Portfolio</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="Home/Contact">Contact</a></li>
 
                     </ul>
                 </nav><!-- #nav-menu-container -->
@@ -56,6 +59,53 @@
         </div>
     </header>
     <!-- #header -->
+    <!-- Start scroll area -->
+
+    <section class="services-area">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide One - Set the background image for this slide in the line below -->
+                <div class="carousel-item active" style="background-image: url('img/scrl/scrl1.jpg')">
+                    <div class="carousel-caption d-none d-md-block" style="top:60%;bottom:auto;text-align:center">
+                      
+                        <h1 style="color:white" class="animated bounceInUp">Infinite Software Development Probability</h1>
+                        <p class="animated bounceInUp" >Octamux is offerings which cater to a wide variety of industries represent the confluence of domain expertise, best practices, solution frameworks, proven methodologies, and reusable components – working seamlessly to help enterprises build nimble systems, save costs, stay competitive, and be successful.</p>
+                    </div>
+                </div>
+                <!-- Slide Two - Set the background image for this slide in the line below -->
+                <div class="carousel-item" style="background-image: url('img/scrl/scrl8.jpg')">
+                    <div class="carousel-caption d-none d-md-block" style="top:60%;bottom:auto;text-align:center">
+
+                        <h1 style="color:white" class="animated fadeInLeftBig">In deep Analysis</h1>
+                        <p class="animated fadeInLeftBig">Octamux is offerings which cater to a wide variety of industries represent the confluence of domain expertise, best practices, solution frameworks, proven methodologies, and reusable components – working seamlessly to help enterprises build nimble systems, save costs, stay competitive, and be successful.</p>
+                    </div>
+                </div>
+                <!-- Slide Three - Set the background image for this slide in the line below -->
+                <div class="carousel-item" style="background-image: url('img/scrl/scrl7-1.jpg')">
+                    <div class="carousel-caption d-none d-md-block" style="top:30%;bottom:auto;text-align:right">
+
+                        <h1 style="color:#0069ff" class="animated fadeInRightBig">Future Technology Scope</h1>
+                        <p style="color:#0069ff" class="animated fadeInRightBig">Octamux is offerings which cater to a wide variety of industries represent the confluence of domain expertise, best practices, solution frameworks, proven methodologies, and reusable components – working seamlessly to help enterprises build nimble systems, save costs, stay competitive, and be successful.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </section>
+    <!-- End scroll area -->
     <!-- Start services Area -->
     <!--<div id="servicess" name="servicess"></div>-->
     <section class="services-area section-gap" style="padding:120px 0 40px 0;" id="servicess" name="servicess">
@@ -75,7 +125,7 @@
 
                         <!--<span class="lnr lnr-laptop-phone"></span>-->
                         <img src="/img/servicess/iconwebdev.png" />
-                        <a href="WebDevelopment.html" target="_blank"><h4 style="color:#0069ff">Web Development</h4></a>
+                        <a href="WebDevelopment.html" target="_self"><h4 style="color:#0069ff">Web Development</h4></a>
                         <!--<p>
                             We provide end-to-end web development services to fulfill all your website requirements. Our industry-proven web design services will breathe more life into your website, because we make sure we deliver a product that is the optimal blend of visibility and usability. Our web development services help you gain competitive advantages by building websites that leverage evolving technologies and search engine visibility factors. Armed with expertise in online marketing and SEO techniques, we build attractive, fast loading, search engine optimized sites with easy and user friendly navigation that help you gain maximum traction with Search Engines and improve traffic and conversions.
                         </p>-->
@@ -90,7 +140,7 @@
                     <div class="single-services">
                         <!--<span class="lnr lnr-picture"></span>-->
                         <img src="/img/servicess/iconsp.png" />
-                        <a href="SharePoint.html" target="_blank"><h4 style="color:#0069ff">Sharepoint Services</h4></a>
+                        <a href="SharePoint.html" target="_self"><h4 style="color:#0069ff">Sharepoint Services</h4></a>
                         <!--<p>
                             We offer genuine and innovative development, support and hosting services for Microsoft SharePoint. We have performed end-to-end SharePoint based implementations for many industry verticals including Insurance, Education, Retail, Manufacturing and Financial Services organizations.
                         </p>-->
@@ -104,7 +154,7 @@
 
                         <img src="/img/servicess/icono365.png" />
                         <!--<span class="lnr lnr-tablet"></span>-->
-                        <a href="Office365.html" target="_blank"> <h4 style="color:#0069ff">Office 365 Services</h4></a>
+                        <a href="Office365.html" target="_self"> <h4 style="color:#0069ff">Office 365 Services</h4></a>
                         <!--<p>
                             Octamux provides Microsoft Office 365 migration, deployment, customization and ... We can also help you provide managed services including, but not limited to.
                         </p>-->
@@ -119,7 +169,7 @@
                     <div class="single-services">
                         <!--<span class="lnr lnr-pie-chart"></span>-->
                         <img src="/img/servicess/icondesigne.png" />
-                        <a href="WebDesign.html" target="_blank"><h4 style="color:#0069ff">Web Design</h4></a>
+                        <a href="WebDesign.html" target="_self"><h4 style="color:#0069ff">Web Design</h4></a>
                         <!--<p>
                             At Octamux, we offer a variety of web design services to help you build your online presence and get noticed. We can help you have a website design that will not only look great, but meet the needs of both you and your customers. We've been in business for more than twelve years and our clients know they can trust us for quality work and excellent support. Your goals are important to us, and we work with you to create the perfect custom website for every need.
                         </p>-->
@@ -132,7 +182,7 @@
                     <div class="single-services">
                         <img src="/img/servicess/iconma.png" />
                         <!--<span class="lnr lnr-camera"></span>-->
-                        <a href="MobileApp.html" target="_blank"><h4 style="color:#0069ff">MobileApp Development</h4></a>
+                        <a href="MobileApp.html" target="_self"><h4 style="color:#0069ff">MobileApp Development</h4></a>
                         <!--<p>
                             Our mobile development specialists create enterprise-grade apps that help our customers differentiate themselves in the market, generate new revenue streams and enhance productivity. Utilising agile delivery methods, our creative designers, architects and developers are industry leaders in their field, and possess the in-depth skills required to design, develop, integrate and deploy mobile apps on all industry leading platforms (iOS, Android, HTML5 & Hybrid). With specialist expertise in mobile banking, payments, back-end integration and digital health, our specialists create innovative, cutting-edge app solutions that will help your organisation realise its digital ambitions.
                         </p>-->
@@ -146,7 +196,7 @@
                         <img src="/img/servicess/iconszoho1.png" />
 
                         <!--<span class="lnr lnr-rocket"></span>-->
-                        <a href="ZOHO.html" target="_blank"><h4 style="color:#0069ff">ZOHO</h4></a>
+                        <a href="ZOHO.html" target="_self"><h4 style="color:#0069ff">ZOHO</h4></a>
                         <p>
                             We have experience in configuring and Customizing Zoho products for different industry verticals.
                         </p>
@@ -270,5 +320,6 @@
     <script src="/Scripts/OM/superfish.min.js"></script>
     <script src="/Scripts/OM/owl.carousel.min.js"></script>
     <script src="/Scripts/OM/main.js"></script>
+    <script src="Scripts/OM/vendor/bootstrap.min.js"></script>
 </body>
 </html>

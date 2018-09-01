@@ -106,6 +106,8 @@
     <Content Include="Content\OM\nice-select.css" />
     <Content Include="Content\OM\owl.carousel.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\slider\animate.css" />
+    <Content Include="Content\slider\full-slider.css" />
     <Content Include="Global.asax" />
     <Content Include="Home.html" />
     <Content Include="img\about\aboutus.jpg" />
@@ -117,6 +119,9 @@
     <Content Include="img\logo\OM_icon.png" />
     <Content Include="img\logo\OM_logo.png" />
     <Content Include="img\logo\OM_logo1.png" />
+    <Content Include="img\scrl\scrl1.jpg" />
+    <Content Include="img\scrl\scrl7-1.jpg" />
+    <Content Include="img\scrl\scrl8.jpg" />
     <Content Include="img\servicess\icondesigne.png" />
     <Content Include="img\servicess\iconma.png" />
     <Content Include="img\servicess\icono365.png" />
