@@ -120,8 +120,10 @@
     <Content Include="img\logo\OM_logo.png" />
     <Content Include="img\logo\OM_logo1.png" />
     <Content Include="img\scrl\scrl1.jpg" />
+    <Content Include="img\scrl\scrl10.jpg" />
     <Content Include="img\scrl\scrl7-1.jpg" />
     <Content Include="img\scrl\scrl8.jpg" />
+    <Content Include="img\scrl\scrl9.jpg" />
     <Content Include="img\servicess\icondesigne.png" />
     <Content Include="img\servicess\iconma.png" />
     <Content Include="img\servicess\icono365.png" />
